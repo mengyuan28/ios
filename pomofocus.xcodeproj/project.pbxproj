@@ -13,6 +13,7 @@
 		7A6B56581B325C0C00C1DD65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B56571B325C0C00C1DD65 /* Images.xcassets */; };
 		7A6B565B1B325C0C00C1DD65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B56591B325C0C00C1DD65 /* LaunchScreen.xib */; };
 		7A6B56671B325C0C00C1DD65 /* pomofocusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B56661B325C0C00C1DD65 /* pomofocusTests.swift */; };
+		B098900A6C688DC209EB1E51 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB49F52296522B93BE0A9BAF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		7A6B56601B325C0C00C1DD65 /* pomofocusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pomofocusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6B56651B325C0C00C1DD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A6B56661B325C0C00C1DD65 /* pomofocusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pomofocusTests.swift; sourceTree = "<group>"; };
+		99E99B44CFBD431C49482D3A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BB49F52296522B93BE0A9BAF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2DD6D4B30BEEB7F46281FB5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B098900A6C688DC209EB1E51 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68289BA7A96F386E99C54B95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2DD6D4B30BEEB7F46281FB5 /* Pods.debug.xcconfig */,
+				99E99B44CFBD431C49482D3A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7A6B56421B325C0C00C1DD65 = {
 			isa = PBXGroup;
 			children = (
 				7A6B564D1B325C0C00C1DD65 /* pomofocus */,
 				7A6B56631B325C0C00C1DD65 /* pomofocusTests */,
 				7A6B564C1B325C0C00C1DD65 /* Products */,
+				68289BA7A96F386E99C54B95 /* Pods */,
+				FC87D66F6CDD01658101D63B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +128,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FC87D66F6CDD01658101D63B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB49F52296522B93BE0A9BAF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A6B566A1B325C0C00C1DD65 /* Build configuration list for PBXNativeTarget "pomofocus" */;
 			buildPhases = (
+				79EF4954D33772906286C221 /* Check Pods Manifest.lock */,
 				7A6B56471B325C0C00C1DD65 /* Sources */,
 				7A6B56481B325C0C00C1DD65 /* Frameworks */,
 				7A6B56491B325C0C00C1DD65 /* Resources */,
+				E1F390208BB49B30C7FA89B8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +232,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		79EF4954D33772906286C221 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1F390208BB49B30C7FA89B8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A6B56471B325C0C00C1DD65 /* Sources */ = {
@@ -340,6 +399,7 @@
 		};
 		7A6B566B1B325C0C00C1DD65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2DD6D4B30BEEB7F46281FB5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pomofocus/Info.plist;
@@ -350,6 +410,7 @@
 		};
 		7A6B566C1B325C0C00C1DD65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99E99B44CFBD431C49482D3A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pomofocus/Info.plist;
@@ -411,6 +472,7 @@
 				7A6B566C1B325C0C00C1DD65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A6B566D1B325C0C00C1DD65 /* Build configuration list for PBXNativeTarget "pomofocusTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +481,7 @@
 				7A6B566F1B325C0C00C1DD65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
